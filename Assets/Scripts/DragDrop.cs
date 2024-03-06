@@ -1,72 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+using Oculus.Interaction;
 
 public class DragDrop : MonoBehaviour
 {
-    private XRGrabInteractable grabInteractable;
+    private Grabbable grabInteractable;
 
     [SerializeField] private Transform dropZoneTransform;
 
     [SerializeField] private float thresholdDistance = 0.5f;
 
-    private void Awake()
+    private void Start()
     {
-
-        Transform handGrabTransform = transform.Find("HandGrabInteractable");
-        if (handGrabTransform == null)
+        grabInteractable = GetComponent<Grabbable>();
+        if (grabInteractable == null)
         {
-            Debug.LogError("HandGrabInteractable not found!");
-        }
-
-        grabInteractable = handGrabTransform.GetComponent<XRGrabInteractable>();
-        if (grabInteractable == null )
-        {
-            Debug.LogError("XRGrabInteractable component not found in the object");
+            Debug.LogError("Could not find XRGrabInteractable");
             return;
         }
 
-        grabInteractable.hoverEntered.AddListener(OnHover);
-        grabInteractable.hoverExited.AddListener(OnHoverExit);
-        grabInteractable.selectEntered.AddListener(OnGrab);
-        grabInteractable.selectExited.AddListener(OnRelease);
+        grabInteractable.WhenGrabbableUpdated += HandleGrabbableUpdated;
     }
 
     private void OnDestroy()
     {
-        if ( grabInteractable != null )
+        grabInteractable.WhenGrabbableUpdated -= HandleGrabbableUpdated;
+    }
+
+    private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
+    {
+        if (grabInteractable.IsGrabbed)
         {
-            grabInteractable.selectEntered.RemoveListener(OnGrab);
-            grabInteractable.selectExited.RemoveListener(OnRelease);
+            Debug.Log("Grabbing");
+        } else
+        {
+            if (IsInsideDropZone())
+            {
+                transform.position = dropZoneTransform.position;
+            }
         }
     }
 
-    private void OnHover(HoverEnterEventArgs args)
-    {
-        Debug.Log($"{args.interactor.gameObject.name} hovered {gameObject.name}");
-    }
-
-    private void OnHoverExit(HoverExitEventArgs args)
-    {
-        Debug.Log($"{args.interactor.gameObject.name} left {gameObject.name}");
-    }
-
-    private void OnGrab(SelectEnterEventArgs args)
-    {
-        Debug.Log($"{args.interactor.gameObject.name} started grabbing {gameObject.name}");
-    }
-
-    private void OnRelease(SelectExitEventArgs args)
-    {
-        Debug.Log($"{args.interactor.gameObject.name} release {gameObject.name}");
-
-        if (IsInsideDropZone())
-        {
-            // Snap object to the center of the drop zone
-            transform.position = dropZoneTransform.position;
-        }
-    }
 
     private bool IsInsideDropZone()
     {

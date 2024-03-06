@@ -37,6 +37,8 @@ namespace Oculus.Interaction
 
     public class Grabbable : MonoBehaviour, IGrabbable
     {
+        public bool IsGrabbed
+        { get; private set; }
 
         [SerializeField, Interface(typeof(ITransformer)), Optional]
         private MonoBehaviour _oneGrabTransformer = null;
@@ -251,6 +253,7 @@ namespace Oculus.Interaction
             }
 
             _activeTransformer.BeginTransform();
+            IsGrabbed = true;
         }
 
         private void UpdateTransform()
@@ -271,6 +274,7 @@ namespace Oculus.Interaction
             }
             _activeTransformer.EndTransform();
             _activeTransformer = null;
+            IsGrabbed = false;
         }
 
         #region Inject
