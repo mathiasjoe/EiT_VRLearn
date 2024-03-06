@@ -38,11 +38,11 @@ public class DragDrop : MonoBehaviour
             {
                 transform.position = dropZoneTransform.position;
                 transform.rotation = dropZoneTransform.rotation;
-                rb.isKinematic = true;
+                //rb.isKinematic = true;
             }
 
         } else {
-            rb.isKinematic = false;
+            //rb.isKinematic = false;
         }
     }
 

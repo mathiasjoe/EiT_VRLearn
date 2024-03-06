@@ -1,38 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Oculus.Interaction;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+using Oculus.Interaction;
 
 public class UiToggle : MonoBehaviour
 {
-    private XRGrabInteractable grabInteractable;
-    public GameObject gameObject;
-    private void Awake()
-    {
-        grabInteractable = GetComponent<XRGrabInteractable>();
+    private Grabbable grabInteractable;
 
+    public GameObject uiObject;
+    private void Start()
+    {
+        grabInteractable = GetComponent<Grabbable>();
         if (grabInteractable == null)
         {
+            Debug.LogError("Could not find XRGrabInteractable");
             return;
         }
 
-        grabInteractable.selectEntered.AddListener(OnGrab);
-        grabInteractable.selectExited.AddListener(OnRelease);
+        grabInteractable.WhenGrabbableUpdated += HandleGrabbableUpdated;
     }
 
     private void OnDestroy()
     {
-        grabInteractable.selectEntered.RemoveListener(OnGrab);
-        grabInteractable.selectExited.RemoveListener(OnRelease);
+        grabInteractable.WhenGrabbableUpdated -= HandleGrabbableUpdated;
     }
 
-    private void OnGrab(SelectEnterEventArgs args)
+    private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
     {
-        gameObject.SetActive(true);
-    }
-
-    private void OnRelease(SelectExitEventArgs args)
-    {
-        gameObject.SetActive(false);
+        uiObject.SetActive(grabInteractable.IsGrabbed);
     }
 }
