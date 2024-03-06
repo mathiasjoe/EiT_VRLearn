@@ -6,7 +6,7 @@ using Oculus.Interaction;
 public class DragDrop : MonoBehaviour
 {
     private Grabbable grabInteractable;
-    private Rigidbody rb;
+    private GameObject[] dropZones;
 
     [SerializeField] private Transform dropZoneTransform;
 
@@ -15,7 +15,7 @@ public class DragDrop : MonoBehaviour
     private void Start()
     {
         grabInteractable = GetComponent<Grabbable>();
-        rb = GetComponent<Rigidbody>();
+        dropZones = GameObject.FindGameObjectsWithTag("DropZone");
         if (grabInteractable == null)
         {
             Debug.LogError("Could not find XRGrabInteractable");
@@ -32,17 +32,50 @@ public class DragDrop : MonoBehaviour
 
     private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
     {
-        if (!grabInteractable.IsGrabbed)
+        if (grabInteractable.IsGrabbed)
         {
-            if (IsInsideDropZone())
-            {
-                transform.position = dropZoneTransform.position;
-                transform.rotation = dropZoneTransform.rotation;
-                //rb.isKinematic = true;
-            }
-
+            OnGrab();
         } else {
-            //rb.isKinematic = false;
+            OnRelease();
+        }
+    }
+
+    private void OnGrab()
+    {
+        EnableDropzonesOutline();
+    }
+
+    private void OnRelease()
+    {
+        if (IsInsideDropZone())
+        {
+            DisableDropzonesOutline();
+            transform.position = dropZoneTransform.position;
+            transform.rotation = dropZoneTransform.rotation;
+        }
+    }
+
+    private void EnableDropzonesOutline()
+    {
+        foreach (var dropZone in dropZones)
+        {
+            MeshRenderer mesh = dropZone.GetComponent<MeshRenderer>(); 
+            if (mesh != null)
+            {
+                mesh.enabled = true;
+            }
+        }
+    }
+
+    private void DisableDropzonesOutline()
+    {
+        foreach (var dropZone in dropZones)
+        {
+            MeshRenderer mesh = dropZone.GetComponent<MeshRenderer>();
+            if (mesh != null)
+            {
+                mesh.enabled = false;
+            }
         }
     }
 
