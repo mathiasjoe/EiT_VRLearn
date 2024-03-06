@@ -46,7 +46,6 @@ public class DragDrop : MonoBehaviour
         }
     }
 
-
     private bool IsInsideDropZone()
     {
         if (dropZoneTransform == null) return false;
