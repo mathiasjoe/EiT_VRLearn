@@ -6,6 +6,7 @@ using Oculus.Interaction;
 public class DragDrop : MonoBehaviour
 {
     private Grabbable grabInteractable;
+    private Rigidbody rb;
 
     [SerializeField] private Transform dropZoneTransform;
 
@@ -14,6 +15,7 @@ public class DragDrop : MonoBehaviour
     private void Start()
     {
         grabInteractable = GetComponent<Grabbable>();
+        rb = GetComponent<Rigidbody>();
         if (grabInteractable == null)
         {
             Debug.LogError("Could not find XRGrabInteractable");
@@ -30,15 +32,17 @@ public class DragDrop : MonoBehaviour
 
     private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
     {
-        if (grabInteractable.IsGrabbed)
-        {
-            Debug.Log("Grabbing");
-        } else
+        if (!grabInteractable.IsGrabbed)
         {
             if (IsInsideDropZone())
             {
                 transform.position = dropZoneTransform.position;
+                transform.rotation = dropZoneTransform.rotation;
+                rb.isKinematic = true;
             }
+
+        } else {
+            rb.isKinematic = false;
         }
     }
 
