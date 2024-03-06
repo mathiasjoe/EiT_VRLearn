@@ -13,8 +13,14 @@ public class DragDrop : MonoBehaviour
 
     private void Awake()
     {
-        grabInteractable = GetComponent<XRGrabInteractable>();
 
+        Transform handGrabTransform = transform.Find("HandGrabInteractable");
+        if (handGrabTransform == null)
+        {
+            Debug.LogError("HandGrabInteractable not found!");
+        }
+
+        grabInteractable = handGrabTransform.GetComponent<XRGrabInteractable>();
         if (grabInteractable == null )
         {
             Debug.LogError("XRGrabInteractable component not found in the object");
