@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 1078000591}
   - component: {fileID: 1078000593}
   - component: {fileID: 1078000592}
+  - component: {fileID: 1078000594}
   m_Layer: 0
   m_Name: grounRug
   m_TagString: Untagged
@@ -1062,6 +1063,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078000590}
   m_Mesh: {fileID: 2354240858143234433, guid: 78906942dba6db24ca155679a45f60ef, type: 3}
+--- !u!65 &1078000594
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078000590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.900132, y: 3.8660052, z: 0.02450402}
+  m_Center: {x: -0.00911653, y: -1.0190136, z: 0.01876355}
 --- !u!114 &1279974907 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2644266181112463229, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
