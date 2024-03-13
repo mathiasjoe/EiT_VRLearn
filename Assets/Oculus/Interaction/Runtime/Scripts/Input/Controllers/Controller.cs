@@ -118,13 +118,13 @@ namespace Oculus.Interaction.Input
             // Default implementation does nothing, to allow instantiation of this modifier directly
         }
 
-        void Update()
-        {
-            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
-            {
-                AIsPressed = !AIsPressed;
-                Debug.Log($"Pressed {AIsPressed}");
-            }
-        }
+        //void Update()
+        //{
+        //    if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+        //    {
+        //        AIsPressed = !AIsPressed;
+        //        Debug.Log($"Pressed {AIsPressed}");
+        //    }
+        //}
     }
 }
