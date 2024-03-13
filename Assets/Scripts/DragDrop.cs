@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Oculus.Interaction;
+using TMPro;
 
 public class DragDrop : MonoBehaviour
 {
@@ -12,6 +11,10 @@ public class DragDrop : MonoBehaviour
 
     [SerializeField] private float thresholdDistance = 0.5f;
 
+    [SerializeField] private GameObject goal;
+
+    private string goalBaseText;
+
     private void Start()
     {
         grabInteractable = GetComponent<Grabbable>();
@@ -20,6 +23,11 @@ public class DragDrop : MonoBehaviour
         {
             Debug.LogError("Could not find XRGrabInteractable");
             return;
+        }
+
+        if (goal != null)
+        {
+            goalBaseText = goal.GetComponent<TextMeshProUGUI>().text;
         }
 
         grabInteractable.WhenGrabbableUpdated += HandleGrabbableUpdated;
@@ -32,6 +40,8 @@ public class DragDrop : MonoBehaviour
 
     private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
     {
+        Debug.Log(goal);
+
         if (grabInteractable.IsGrabbed)
         {
             OnGrab();
@@ -45,6 +55,9 @@ public class DragDrop : MonoBehaviour
     private void OnGrab()
     {
         EnableDropzonesOutline();
+
+        SetGoalTextColor(Color.white);
+        SetStrikethrought(false);
     }
 
     private void OnRelease()
@@ -54,6 +67,45 @@ public class DragDrop : MonoBehaviour
         {
             transform.position = dropZoneTransform.position;
             transform.rotation = dropZoneTransform.rotation;
+
+            SetGoalTextColor(Color.green);
+            SetStrikethrought(true);
+        }
+    }
+
+    private void SetStrikethrought(bool enable)
+    {
+        if (goal != null) 
+        {
+            TextMeshProUGUI textComponent = goal.GetComponent<TextMeshProUGUI>();
+
+            if  (textComponent != null )
+            {
+                string text = textComponent.text;
+                if (enable)
+                {
+                    textComponent.text = $"<s>{goalBaseText}</s>";
+                } else
+                {
+                    textComponent.text = $"{goalBaseText}";
+                }
+            }
+        }
+    }
+
+    private void SetGoalTextColor(Color color)
+    {
+        if (goal != null)
+        {
+            TextMeshProUGUI textComponent = goal.GetComponent<TextMeshProUGUI>();
+            if (textComponent != null)
+            {
+                textComponent.color = color;
+            }
+            else
+            {
+                Debug.LogError("TextMeshProUGUI component not found on goal GameObject.");
+            }
         }
     }
 
