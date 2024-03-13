@@ -40,8 +40,6 @@ public class DragDrop : MonoBehaviour
 
     private void HandleGrabbableUpdated(Oculus.Interaction.GrabbableArgs args)
     {
-        Debug.Log(goal);
-
         if (grabInteractable.IsGrabbed)
         {
             OnGrab();
@@ -54,7 +52,7 @@ public class DragDrop : MonoBehaviour
 
     private void OnGrab()
     {
-        EnableDropzonesOutline();
+        // EnableDropzonesOutline();
 
         SetGoalTextColor(Color.white);
         SetStrikethrought(false);
@@ -65,7 +63,7 @@ public class DragDrop : MonoBehaviour
 
     private void OnRelease()
     {
-        DisableDropzonesOutline();
+        // DisableDropzonesOutline();
         if (IsInsideDropZone())
         {
             transform.position = dropZoneTransform.position;

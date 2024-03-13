@@ -19,6 +19,8 @@ namespace Oculus.Interaction.Input
         DataModifier<ControllerDataAsset>,
         IController
     {
+
+        private bool AIsPressed = false;
         public Handedness Handedness => GetData().Config.Handedness;
 
         public bool IsConnected
@@ -114,6 +116,15 @@ namespace Oculus.Interaction.Input
         protected override void Apply(ControllerDataAsset data)
         {
             // Default implementation does nothing, to allow instantiation of this modifier directly
+        }
+
+        void Update()
+        {
+            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
+            {
+                AIsPressed = !AIsPressed;
+                Debug.Log($"Pressed {AIsPressed}");
+            }
         }
     }
 }
