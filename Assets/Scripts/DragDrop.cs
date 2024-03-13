@@ -35,7 +35,9 @@ public class DragDrop : MonoBehaviour
         if (grabInteractable.IsGrabbed)
         {
             OnGrab();
-        } else {
+        }
+        else
+        {
             OnRelease();
         }
     }
@@ -47,9 +49,9 @@ public class DragDrop : MonoBehaviour
 
     private void OnRelease()
     {
+        DisableDropzonesOutline();
         if (IsInsideDropZone())
         {
-            DisableDropzonesOutline();
             transform.position = dropZoneTransform.position;
             transform.rotation = dropZoneTransform.rotation;
         }
@@ -59,7 +61,7 @@ public class DragDrop : MonoBehaviour
     {
         foreach (var dropZone in dropZones)
         {
-            MeshRenderer mesh = dropZone.GetComponent<MeshRenderer>(); 
+            MeshRenderer mesh = dropZone.GetComponent<MeshRenderer>();
             if (mesh != null)
             {
                 mesh.enabled = true;
