@@ -58,6 +58,9 @@ public class DragDrop : MonoBehaviour
 
         SetGoalTextColor(Color.white);
         SetStrikethrought(false);
+
+        SetGravity(false);
+
     }
 
     private void OnRelease()
@@ -70,6 +73,23 @@ public class DragDrop : MonoBehaviour
 
             SetGoalTextColor(Color.green);
             SetStrikethrought(true);
+
+            SetGravity(false);
+        } else
+        {
+            SetGravity(true);
+        }
+    }
+
+    private void SetGravity(bool enable)
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (enable)
+        {
+            rb.isKinematic = false;
+        } else
+        {
+            rb.isKinematic = true;
         }
     }
 
