@@ -14,8 +14,11 @@ public class OptionsHandler : MonoBehaviour
     private Dictionary<GameObject, Vector3> originalPositions = new Dictionary<GameObject, Vector3>();
     private Dictionary<GameObject, Quaternion> originalRotations = new Dictionary<GameObject, Quaternion>();
 
+    private GameObject[] menus;
+
     void Start()
     {
+        // Get organs original position
         organs = GameObject.FindGameObjectsWithTag("Organ");
         foreach (var organ in organs)
         {
@@ -26,11 +29,27 @@ public class OptionsHandler : MonoBehaviour
             }
         }
 
+        // Get original goal texts
         goals = GameObject.FindGameObjectsWithTag("Goal");
         foreach (var goal in goals)
         {
             string text = goal.GetComponent<TextMeshProUGUI>().text;
             goalsBaseText[goal] = text;
+        }
+
+        // Fetch all menus
+        menus = GameObject.FindGameObjectsWithTag("Menu");
+        Debug.Log($"Menus found: {menus.Length}");
+        // Hide one of them
+        var secondMenu = menus[1];
+        if (secondMenu != null)
+        {
+            var menuState = secondMenu.GetComponent<MenuState>();
+            if (menuState != null)
+            {
+                secondMenu.SetActive(false);
+                menuState.isActive = false;
+            }
         }
     }
 
@@ -58,6 +77,19 @@ public class OptionsHandler : MonoBehaviour
             {
                 textComponent.color = Color.white;
                 textComponent.text = $"{goalsBaseText[goal]}";
+            }
+        }
+    }
+
+    public void ToggleMenuType()
+    {
+        foreach (var menu in menus)
+        {
+            var menuState = menu.GetComponent<MenuState>();
+            if (menuState != null)
+            {
+                menu.SetActive(!menuState.isActive);
+                menuState.isActive = !menuState.isActive;
             }
         }
     }
