@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DropZone
   - Organ
+  - Goal
   layers:
   - Default
   - TransparentFX
