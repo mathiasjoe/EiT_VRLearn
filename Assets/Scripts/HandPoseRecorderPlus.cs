@@ -212,7 +212,7 @@ public class HandPoseRecorderPlus : MonoBehaviour
             Directory.CreateDirectory(parentDir);
         }
         string name = _recordable != null ? _recordable.name : "Auto";
-        AssetDatabase.CreateAsset(_posesCollection, Path.Combine(parentDir, $"{name}_HandGrabCollection.asset"));
-        AssetDatabase.SaveAssets();
+        //AssetDatabase.CreateAsset(_posesCollection, Path.Combine(parentDir, $"{name}_HandGrabCollection.asset"));
+        //AssetDatabase.SaveAssets();
     }
 }
