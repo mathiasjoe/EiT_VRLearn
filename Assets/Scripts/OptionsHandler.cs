@@ -63,6 +63,7 @@ public class OptionsHandler : MonoBehaviour
                 Rigidbody rb = organ.GetComponent<Rigidbody>();
                 rb.isKinematic = false;
                 rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
 
                 organ.transform.position = originalPositions[organ];
                 organ.transform.rotation = originalRotations[organ];
