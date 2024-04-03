@@ -2834,9 +2834,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Leveren er kroppens st\xF8rste kjertel og lager blant annet galle og proteiner
+    til blodet.\r\nDen er ogs\xE5 viktig for stoffskiftet i kroppen, i tillegg kan
+    den lage kolesterol og lagrer karbohydrater, vitaminer og fett.\r\nLeveren mottar
+    n\xE6ringsstoffer fra tarmene og er derfor viktig for ford\xF8yelsessystemet.
+    Den \u201Crenser\u201D blodet ved \xE5 bryte ned avfallsstoffer, giftstoffer,
+    alkohol og gamle blodceller.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5811,9 +5814,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Hjerner er det organe som gj\xF8r at vi klarer \xE5 sanse, tenke og bevege
+    kroppen. Hjernen er en del av det sentrale nervesystemet og motar signaler fra
+    nervene.\n\nHos voksne veier hjernen mellom 1,3 og 1,5 kilo.\n\nDe viktigste
+    oppgavene til hjerner er \xE5 f\xE5 sanseinformasjon fra kroppen slik at man
+    kjenner for eksempel smak, lukt og ber\xF8ring. Hjernen bruker s\xE5 denne informasjonen
+    til \xE5 f\xE5 frem en viljestyrt reaksjon, som for eksempel l\xF8ping."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6569,9 +6575,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Lungene er organet for pusting. Luftveiene og lungene tilf\xF8rer kroppen
+    oksygen og fjerner karbondioksid. Luftveiene betspr av nesen, halsen, og luftr\xF8ret
+    og er transportorganer for luften. Luftr\xF8rende deler seg til to veier som
+    f\xF8rer til hver sin lunge."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7690,9 +7697,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Tykktarmen er siste del av ford\xF8yelseskanalen. Den ligger f\xF8r endetarms\xE5pningen
+    og etter tynnramen. Tykktarmen er et muskul\xE6rt r\xF8r som hos voksene er mellom
+    1,3 og 1,5 meter langt.\n\nTykktarmen tar opp vann og salter fra tarminnholdet
+    og kan lagre tarminnholdet midlertidig f\xF8r det blir t\xF8mt som avf\xF8ring
+    via endetarms\xE5pningen.\n\nAlt som g\xE5r gjennom tykktarmen bruker ca 12 timer
+    p\xE5 reisen."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9365,9 +9375,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Hjertets hovedfunksjon er \xE5 pumpe blod ut til kroppens organer. Det
+    har en st\xF8rrelse p\xE5 omtrent knyttneven til kroppen og veier 300-350g. Det
+    er delt inn i venstre og h\xF8yre halvdel. Begge har et forkammer og et hovedkamer.\n\nH\xF8yre
+    forkammer mottar oksygentaiig blod og sendre det til h\xF8yre hovedkammer som
+    pumper det videre til lungene. Lungene tilf\xF8rer oksygen til blodet f\xF8r
+    det blir send videre til venstre forkammer. Blodet blir videre sendt til venstre
+    hovedkammer som pumper det ut i hovedpuls\xE5ren.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11723,9 +11737,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aisjd iajsdp jaspodk poskdpo fkspokdpo kepofk spoekfp oskepfk spoekf pskoefposkepfokspeok
-    fpsokep foksepf kspoekfpsokefp oskepfo kspeofk psokepfo kspeofk psokefp skpeofk
-    sef sef sefsefs efs ef sef sef sef se fse '
+  m_text: "Magesekken er en utvidelse av ford\xF8yelseskanalen mellom spiser\xF8ret
+    og tynntarmen. Magesekken fungerer som et reservoar for maten, som den slipper
+    igjennom i sm\xE5, regelmessige porsjoner til tarmen. Dette gj\xF8r at vi ikke
+    beh\xF8ver \xE5 spise like ofta da maten som blir spist blir fordelt litt etter
+    litt.\n\nMagesekken bidrar ogs\xE5 til ford\xF8yelsen ved \xE5 elte f\xF8den
+    til en gr\xF8t og blande den med magesaft, som innleder nedbrytningen av flere
+    av n\xE6ringsstoffene i maten."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
