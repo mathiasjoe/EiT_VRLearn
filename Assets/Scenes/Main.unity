@@ -13458,7 +13458,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TODO
+  m_text: "Tynntarmen er en del av ford\xF8yelseskanal som strekker seg fra mageporten
+    til tykktarmen.\n\nTynntarmen er mellom fire og fem meter lang hos voksene folk.\n\nTynntarmen
+    er delt i tre deler. En kalt tolvfingertarmen, en kalt tomtarmen, og siste kalt
+    krumtarmen.\n\nTynntarmen er det organet som bryter ned og tar opp n\xE6ringsstoffer."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
