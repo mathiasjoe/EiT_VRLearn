@@ -1,4 +1,4 @@
-# :goggles:	Meta Interaction SDK 
+# :goggles:	EiT VR_Learn
 
 
 ## :video_game: Scenes:
