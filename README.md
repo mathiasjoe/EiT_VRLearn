@@ -1,9 +1,9 @@
-# :goggles:	EiT VR_Learn
+# :goggles:	EiT VR_Learn Gruppe 1
 
 
 ## :video_game: Scenes:
-- HandGrabInteractions.unity
-- Skeleton.unity
+- Main.unity
+- MainMenu.unity
 
 
 ## :pushpin: Additional Helpful resources:
