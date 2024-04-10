@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GrabInteractions.unity
     guid: d2578c4953c2bfc4fb8342c7315f4a35
   - enabled: 1
-    path: Assets/Scenes/HandGrabInteractions.unity
+    path: Assets/Scenes/Main.unity
     guid: ba90f1927040ed146818413d42060820
   - enabled: 1
     path: Assets/Scenes/HandPoseDetection.unity
