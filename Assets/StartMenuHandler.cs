@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class StartMenuHandler : MonoBehaviour
 {
 
+    public GameObject menu;
+    public GameObject aboutCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +34,17 @@ public class StartMenuHandler : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ShowAbout()
+    {
+        menu.SetActive(false);
+        aboutCanvas.SetActive(true);
+    }
+
+    public void HideAbout()
+    {
+        aboutCanvas.SetActive(false);
+        menu.SetActive(true);
     }
 }
