@@ -53,7 +53,7 @@ public class OptionsHandler : MonoBehaviour
         }
     }
 
-    public void ResetGame()
+    public void ResetGame(bool gravity)
     {
         // Reset position of organs
         foreach (var organ in organs)
@@ -61,7 +61,7 @@ public class OptionsHandler : MonoBehaviour
             if (organ != null && originalPositions.ContainsKey(organ) && originalRotations.ContainsKey(organ)) 
             { 
                 Rigidbody rb = organ.GetComponent<Rigidbody>();
-                rb.isKinematic = false;
+                rb.isKinematic = !gravity;
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
 

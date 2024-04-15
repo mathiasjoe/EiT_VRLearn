@@ -23,6 +23,11 @@ public class StartMenuHandler : MonoBehaviour
         SceneTransitionManager.singleton.GoToScene(1);
     }
 
+    public void StartLearn()
+    {
+        SceneTransitionManager.singleton.GoToScene(2);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
