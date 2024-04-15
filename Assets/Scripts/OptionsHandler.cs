@@ -84,6 +84,13 @@ public class OptionsHandler : MonoBehaviour
 
     public void ToggleMenuType()
     {
+        StartCoroutine(ToggleMenuTypeRoutine());
+    }
+
+    IEnumerator ToggleMenuTypeRoutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+
         foreach (var menu in menus)
         {
             var menuState = menu.GetComponent<MenuState>();
@@ -93,5 +100,10 @@ public class OptionsHandler : MonoBehaviour
                 menuState.isActive = !menuState.isActive;
             }
         }
+    }
+
+    public void QuitToMainMenu()
+    {
+        SceneTransitionManager.singleton.GoToScene(0);
     }
 }
