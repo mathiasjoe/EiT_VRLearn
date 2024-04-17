@@ -6,8 +6,11 @@ using Oculus.Interaction.Input;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class HandPoseRecorderPlus : MonoBehaviour
 {   
@@ -202,9 +205,11 @@ public class HandPoseRecorderPlus : MonoBehaviour
         }
         _posesCollection?.StoreInteractables(savedPoses);
     }
+    
 
     private void GenerateCollectionAsset()
     {
+        #if UNITY_EDITOR
         _posesCollection = ScriptableObject.CreateInstance<HandGrabInteractableDataCollection>();
         string parentDir = Path.Combine("Assets", "HandGrabInteractableDataCollection");
         if (!Directory.Exists(parentDir))
@@ -214,5 +219,6 @@ public class HandPoseRecorderPlus : MonoBehaviour
         string name = _recordable != null ? _recordable.name : "Auto";
         AssetDatabase.CreateAsset(_posesCollection, Path.Combine(parentDir, $"{name}_HandGrabCollection.asset"));
         AssetDatabase.SaveAssets();
+        #endif
     }
 }
